@@ -27,12 +27,6 @@ SSS_TRANSLATION_RULE='/usr/share/doc/cups_shell-SSSLANG1MARKER.htm'
 SSS_HANDLER_EDITOR='defaulthtmleditor'
 SSS_HANDLER_VIEWER='basichtmlviewer'
 
-[_usr_share_doc_HOWTO-fattenpuppy.htm]
-#when the translation file is same name as the en file, then former replaces latter.
-SSS_TRANSLATION_RULE='/usr/share/doc/HOWTO-fattenpuppy.htm'
-SSS_HANDLER_EDITOR='defaulthtmleditor'
-SSS_HANDLER_VIEWER='basichtmlviewer'
-
 [_usr_share_doc_HOWTO-internationalization.htm]
 SSS_TRANSLATION_RULE='/usr/share/doc/HOWTO-internationalization.htm'
 SSS_HANDLER_EDITOR='defaulthtmleditor'

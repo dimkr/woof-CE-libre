@@ -514,7 +514,7 @@ export BootManager='
 
     <frame '$(gettext 'Load kernel modules')'>
       <vbox space-expand="true" space-fill="true">
-        '"`/usr/lib/gtkdialog/xml_info scale module.svg 60 "$(gettext "If a driver module did not get loaded, or the wrong one got loaded, or you want to 'blacklist' a module, this is the place. A common scenario is a driver got auto-loaded, for say your wireless network card, but you cannot or do not want to use it, and want some other module or want to use Ndiswrapper (to use the Windows driver).")"`"'
+        '"`/usr/lib/gtkdialog/xml_info scale module.svg 60 "$(gettext "If a driver module did not get loaded, or the wrong one got loaded, or you want to 'blacklist' a module, this is the place. A common scenario is a driver got auto-loaded, for say your wireless network card, but you cannot or do not want to use it, and want some other module.")"`"'
         <vbox space-expand="false" space-fill="false">
           <text height-request="20"><label>""</label></text>
           <hbox>

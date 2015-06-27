@@ -68,6 +68,9 @@ case $DB_DISTRO in
  ubuntu)
   nohup defaulthtmlviewer http://packages.ubuntu.com/${DB_RELEASE}/${DB_nameonly} &
  ;;
+ trisquel)
+  nohup defaulthtmlviewer http://packages.trisquel.info/${DB_RELEASE}/${DB_nameonly} &
+ ;;
  arch)
   nohup defaulthtmlviewer http://www.archlinux.org/packages/${DB_SUB}/i686/${DB_nameonly}/ &
  ;;

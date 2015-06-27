@@ -30,6 +30,8 @@
 #130221 vertical scrollbar if more than 9 wireless networks found.
 #131227 zigbert: gui (gtkdialog) improvements.
 
+. /etc/DISTRO_SPECS
+
 export TEXTDOMAIN=sns___sns
 export OUTPUT_CHARSET=UTF-8
 . gettext.sh
@@ -150,7 +152,7 @@ fi
 
 CLICKMSG="`/usr/lib/gtkdialog/xml_info fixed "internet_connect.svg" 60 "$(gettext 'Puppy has identified these network interfaces on your computer. Click a button to configure the interface for use.')"`"
 #100313 add a button for loading a Windows driver...
-if [ "`echo "$ALL_IF_DRIVER" | grep 'ndiswrapper'`" == "" ];then
+if [ "$DISTRO_BINARY_COMPAT" != "trisquel" ] && [ "`echo "$ALL_IF_DRIVER" | grep 'ndiswrapper'`" == "" ];then
  CLICKMSG="`/usr/lib/gtkdialog/xml_info fixed "internet_connect.svg" 60 "$(gettext 'Puppy has identified these network interfaces on your computer. Click a button to configure the interface for use, or click 'Windows' button if you want to install and use a MS Windows driver.')"`"
  INTERFACEBUTTONS="${INTERFACEBUTTONS} 
   <button><label>Windows</label><action type=\"exit\">Interface_Windows</action></button>"
