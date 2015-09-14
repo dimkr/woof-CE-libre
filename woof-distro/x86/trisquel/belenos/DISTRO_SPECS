@@ -5,7 +5,7 @@ DISTRO_VERSION=6.0.2
 #The distro whose binary packages were used to build this distribution:
 DISTRO_BINARY_COMPAT='trisquel'
 #Prefix for some filenames: exs: tahrsave.2fs, tahr-6.0.2.sfs
-DISTRO_FILE_PREFIX='libre'
+DISTRO_FILE_PREFIX='librepup'
 #The version of the distro whose binary packages were used to build this distro:
 DISTRO_COMPAT_VERSION='belenos'
 #the kernel pet package used:

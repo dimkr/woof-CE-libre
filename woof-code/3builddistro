@@ -1818,6 +1818,9 @@ fNUM1=`echo -n "$DISTRO_COMPAT_VERSION" | wc -c`
   lucid|lupu|luci) #110906 fix. 120305 120312
    enabledrepos="Packages-puppy-lucid-official Packages-puppy-noarch-official "
   ;;
+  librepup)
+   enabledrepos="Packages-puppy-librepup-official"
+  ;;
   wary|racy) #110906 110917 120305 120312 121105
    enabledrepos="Packages-puppy-${DISTRO_DB_SUBNAME}-official Packages-puppy-quirky-official Packages-puppy-noarch-official Packages-puppy-4-official " #110824 added -common-
   ;;
