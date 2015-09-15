@@ -138,17 +138,18 @@ yes|deadbeef||exe,dev,doc,nls
 yes|debianutils|debianutils|exe,dev,doc,nls
 yes|defaults-chooser||exe|
 no|desk_background_generic||exe|
-yes|desk_background_tahr||exe|pet:librepup| #wallpapers for tahr puppy.
+no|desk_background_tahr||exe|pet:librepup| #wallpapers for tahr puppy.
 no|desk_background_precise3||exe| #wallpapers for precise puppy.
 no|desk_background_quirkytahr||exe|pet:noarch
-yes|desk_icon_theme_blue_moon||exe
+no|desk_icon_theme_blue_moon||exe
 no|desk_icon_theme_jq8flat||exe
-yes|desk_icon_theme_ardis||exe
-yes|desk_icon_theme_neon||exe
+no|desk_icon_theme_ardis||exe
+no|desk_icon_theme_neon||exe
 no|desk_icon_theme_original||exe
-yes|desk_icon_theme_jq8raised||exe
+no|desk_icon_theme_jq8raised||exe
 no|desk_icon_theme_smooth_color||exe
 no|desk_icon_theme_stardust||exe
+yes|desk_icon_theme_trinity||exe
 yes|devmapper|libdevmapper1.02.1,libdevmapper-dev,libdevmapper-event1.02.1|exe,dev,doc,nls
 no|dhcpcd|dhcpcd|exe,dev>null,doc,nls
 yes|dhcpcd||exe,dev,doc,nls|pet:common
@@ -331,16 +332,16 @@ no|gtklp|gtklp|exe,dev,doc,nls| #stupid deb has no .desktop file -- need a templ
 yes|gtklp||exe,dev,doc,nls|pet:wary5| #maybe better to use this anyway, as using cups from wary.
 no|gtkmm|libgtkmm-2.4-1c2a,libgtkmm-2.4-dev|exe,dev,doc,nls
 no|gtkmoz||exe
-yes|gtk_theme_stark||exe
-yes|gtk_theme_flatbluecontrast||exe
+no|gtk_theme_stark||exe
+no|gtk_theme_flatbluecontrast||exe
 no|gtk_theme_flat_grey||exe
-yes|gtk_theme_flat_grey_rounded||exe
+no|gtk_theme_flat_grey_rounded||exe
 no|gtk_theme_gradient_brown||exe
 no|gtk_theme_gradient_grey||exe
 no|gtk_theme_polished_blue||exe
 no|gtk_theme_quirky61||exe|pet:noarch
-yes|gtk_theme_stardust_zigbert||exe
-yes|gtk_theme_stark-blueish||exe
+no|gtk_theme_stardust_zigbert||exe
+no|gtk_theme_stark-blueish||exe
 no|gtksourceview||exe,dev,doc,nls| #my pet with genie.lang added... no, now in template.
 yes|gtksourceview|libgtksourceview2.0-0,libgtksourceview2.0-common,libgtksourceview2.0-dev|exe,dev,doc,nls
 yes|gtkspell|libgtkspell0,libgtkspell-dev|exe,dev,doc,nls
@@ -400,9 +401,10 @@ yes|jwm||exe,dev,doc,nls|pet:librepup
 no|jwmbuttons||exe
 yes|jwmconfig3||exe
 yes|jwmthememaker||exe
-yes|jwm_theme_deepbluebold||exe
-yes|jwm_theme_stark-blueish||exe|pet:librepup
-yes|jwm_theme_bluevariety||exe
+no|jwm_theme_deepbluebold||exe
+no|jwm_theme_stark-blueish||exe|pet:librepup
+no|jwm_theme_bluevariety||exe
+yes|jwm_theme_teh_gray||exe
 no|jwm_theme_quirky60||exe|pet:noarch
 no|kbd|kbd|exe,dev>exe,doc,nls
 no|kbd||exe
@@ -968,7 +970,7 @@ no|zmixer||exe
 yes|z_mpscan_fix_precise||exe|pet:precise| #refer forum t=81808
 yes|zz_ubuntu_precise_fixup||exe,dev,doc,nls
 no|z_mesa||exe,dev,doc,nls| #120506 kms for intel and nouveau, and ati r600 but not r300. 120902 disabled.
-yes|z_tahrfix||exe
+no|z_tahrfix||exe
 no|z_xf86-video-ati||exe,dev,doc,nls| #fix bug report kernel kms radeon module wrong version. compiled no kms. 120902 disabled.
 no|z_xorg_fix_precise||exe,dev,doc,nls| #server segfaults in above xserver_xorg pkg, recompiled here. also -input- drivers. 120531 try turning off.
 '
