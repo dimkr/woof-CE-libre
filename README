@@ -19,6 +19,22 @@ Unlike its upstream, woof-CE-libre:
     graphical wizards, scripts, etc' are removed.
   - Is pre-configured to produce the latest release of Librepup.
 
+Also, Librepup differs from the upsteam release it is based on:
+  - It uses different artwork and branding, to avoid confusion between the two
+  - Quickpet is removed, as it recommends non-free software
+  - The non-free browser is replaced with IceCat
+    (https://www.gnu.org/software/gnuzilla/)
+  - The default IRC client is replaced with a patched HexChat
+    (https://hexchat.github.io/) which does not recommend a non-free browser
+  - Sylpheed (http://sylpheed.sraoss.jp/en/) has been updated and re-packaged,
+    to remove files under /root
+  - rxvt-unicode (http://software.schmorp.de/pkg/rxvt-unicode.html) has been
+    updated and re-packaged, to add a missing symlink and replace urxvt with the
+    more efficient combination of urxvtc and urxvtd
+  - The kernel has been updated to a newer minor version, deblobbed and rebuilt
+    with the same configuration
+  - The default package repository has been replaced by Librepup's repository
+
 Relationship with Upstream
 ==========================
 
