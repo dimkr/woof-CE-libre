@@ -8,7 +8,7 @@
 export LANG=C #faster.
 
 # for downlaoding kernel
-REPO_URL=${REPO_URL:-http://distro.ibiblio.org/puppylinux/huge_kernels/} #can change var
+REPO_URL=${REPO_URL:-http://librepup.info/huge_kernels/} #can change var
 
 #w482 use xorriso if it is installed (see also functions4puppy)...
 CDRECORD='cdrecord'
