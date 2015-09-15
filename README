@@ -1,15 +1,49 @@
-Woof-CE (woof-Community Edition) is  a fork of Barry Kauler's woof2 fossil 
-repository of Nov 11, 2013 commit f6332edbc4a75c262a8fec6e7d39229b0acf32cd.
-BK's original (unmaintained) is at http://bkhome.org/fossil/woof2.cgi/index
+Introduction
+============
 
-Woof-CE is a "Puppy builder". What this means is you can build your own custom
-Puppy Linux live-CD from the binary packages of another distro.
-Currently supported: Ubuntu, Debian, Slackware, Arch, T2, Puppy, Mageia
-woof-CE has four directories.
-woof-arch:  architecture-dependent (x86, arm) files, mostly binary executables.
-woof-code:  the core of Woof. Mostly scripts.
-woof-distro: distro-configuration (Debian, Slackware, etc.) files.
-kernel-kit: scripts to download, patch, configure and build the kernel.
+This is a libre, GNU FSDG compliant fork of woof-CE
+(https://github.com/puppylinux-woof-CE/woof-CE), which follows upstream closely.
+It is used to build Librepup (http://librepup.info/), a libre fork of Puppy
+Linux (http://www.puppylinux.org/).
 
-Information on the puppy building process with woof-CE can be found in 
-README-FIRST, woof-code/README.txt and kernel-kit/README.
+woof-CE-libre is proudly hosted at https://notabug.org/dimkr/woof-CE-libre.
+
+Currently, Librepup is based built using binary packages from
+Trisquel (http://www.trisquel.info/) 7 and equivalent to Tahrpup 6.0.2.
+
+Features
+========
+
+Unlike its upstream, woof-CE-libre:
+  - Is deblobbed: (hopefully) all recommendations of non-free software in
+    graphical wizards, scripts, etc' are removed.
+  - Is pre-configured to produce the latest release of Librepup.
+
+Relationship with Upstream
+==========================
+
+The "libre" branch of woof-CE-libre follows the "testing" branch of upstream.
+
+Most features added by woof-CE-libre have been upstreamed, to ease maintenance:
+  - Configuration and data files required to reproduce the latest upstream
+    version of Puppy Linux (http://www.puppylinux.org/)
+  - Support for Trisquel (http://www.trisquel.info/) packages and repositories
+  - Support for "longterm" kernels that are forward- and backward- compatible
+    with third-party drivers
+  - Support for deblobbed kernels, using the Linux-libre
+    (http://www.fsfla.org/ikiwiki/selibre/linux-libre/) scripts
+  - Minor fixes and efficiency improvements
+
+Librepup-specific additions (such as its configuration files) will not be
+upstreamed, to reduce the risk of misleading users who associate the 'Librepup'
+moniker with free software into using non-free software, if this branding is
+used by a derivative of upstream.
+
+Bugs
+====
+
+woof-CE-libre- or Librepup- specific issues (e.g non-free components in
+Librepup) should be reported through
+https://notabug.org/dimkr/woof-CE-libre/issues.
+
+Other issues should be reported to upstream.
