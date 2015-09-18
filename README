@@ -55,6 +55,17 @@ upstreamed, to reduce the risk of misleading users who associate the 'Librepup'
 moniker with free software into using non-free software, if this branding is
 used by a derivative of upstream.
 
+Building Librepup
+=================
+
+Through Librepup or Puppy Linux (http://www.puppylinux.org/), run:
+  ./merge2out
+  cd ../woof-out_x86_x86_trisquel_belenos
+  yes "" | ./0setup
+  ./1download
+  echo | ./2createpackages
+  ./3builddistro-Z
+
 Bugs
 ====
 
