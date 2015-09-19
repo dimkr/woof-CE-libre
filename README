@@ -29,8 +29,8 @@ Also, Librepup differs from the upsteam release it is based on:
   - Sylpheed (http://sylpheed.sraoss.jp/en/) has been updated and re-packaged,
     to remove files under /root
   - rxvt-unicode (http://software.schmorp.de/pkg/rxvt-unicode.html) has been
-    updated and re-packaged, to add a missing symlink and replace urxvt with the
-    more efficient combination of urxvtc and urxvtd
+    updated and re-packaged to drop all plugins, add a missing symlink and
+    replace urxvt with the more efficient combination of urxvtc and urxvtd
   - DeaDBeeF (http://deadbeef.sourceforge.net/) has been re-packaged, to move it
     to /usr and reduce its size
   - net_setup has been deblobbed
@@ -68,6 +68,9 @@ Through Librepup or Puppy Linux (http://www.puppylinux.org/), run:
   ./1download
   echo | ./2createpackages
   ./3builddistro-Z
+
+It is possible to run woof-CE-libre through other distributions as well, using
+run_woof (https://github.com/puppylinux-woof-CE/run_woof).
 
 Bugs
 ====
