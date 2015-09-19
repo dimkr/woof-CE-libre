@@ -31,6 +31,9 @@ Also, Librepup differs from the upsteam release it is based on:
   - rxvt-unicode (http://software.schmorp.de/pkg/rxvt-unicode.html) has been
     updated and re-packaged, to add a missing symlink and replace urxvt with the
     more efficient combination of urxvtc and urxvtd
+  - DeaDBeeF (http://deadbeef.sourceforge.net/) has been re-packaged, to move it
+    to /usr and reduce its size
+  - net_setup has been deblobbed
   - The kernel has been updated to a newer minor version, deblobbed and rebuilt
     with the same configuration
   - The default package repository has been replaced by Librepup's repository
