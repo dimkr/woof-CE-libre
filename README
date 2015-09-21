@@ -34,6 +34,9 @@ Also, Librepup differs from the upsteam release it is based on:
   - DeaDBeeF (http://deadbeef.sourceforge.net/) has been re-packaged, to move it
     to /usr and reduce its size
   - net_setup has been deblobbed
+  - Clipit (http://sourceforge.net/projects/gtkclipit/) has been replaced with
+    Parcellite (http://parcellite.sourceforge.net/), because it is newer and
+    does not show popup windows
   - The kernel has been updated to a newer minor version, deblobbed and rebuilt
     with the same configuration
   - The default package repository has been replaced by Librepup's repository
@@ -80,3 +83,9 @@ Librepup) should be reported through
 https://notabug.org/dimkr/woof-CE-libre/issues.
 
 Other issues should be reported to upstream.
+
+Legal Information and Credits
+=============================
+
+The Librepup logo by Koz Ross is provided under the terms of the CC-BY-SA-4.0
+license (https://creativecommons.org/licenses/by-sa/4.0/).
