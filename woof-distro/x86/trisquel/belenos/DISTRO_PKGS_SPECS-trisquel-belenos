@@ -104,7 +104,7 @@ yes|cdrkit|genisoimage,wodim,icedax|exe,dev,doc,nls
 yes|cgtkcalc||exe,dev>null,doc,nls
 no|chmlib||exe,dev,doc,nls
 no|chmsee||exe,dev>null,doc,nls
-yes|clipit||exe|pet:librepup
+no|clipit||exe|pet:librepup
 yes|close-dvd+rwtools||exe
 yes|connectorgram||exe
 yes|copy-fast||exe|pet:librepup|
@@ -674,7 +674,7 @@ no|palemoon||exe,dev,doc,nls
 yes|pam|libpam0g|exe,dev,doc,nls
 yes|pango|libpango-1.0-0,libpango1.0-0,libpango1.0-dev,libpangoft2-1.0-0,libpangocairo-1.0-0,libpangox-1.0-0,libpangoxft-1.0-0,gir1.2-pango-1.0|exe,dev,doc,nls
 no|pangomm|libpangomm-1.4-1,libpangomm-1.4-dev|exe,dev,doc,nls
-no|parcellite||exe|pet:librepup
+yes|parcellite||exe|pet:librepup
 yes|parted2-lib|parted,libparted0debian1|exe,dev>null,doc,nls|compat:belenos| #this is old 2.3. leave out libparted0-dev. only keep libs, see template.
 yes|parted||exe,dev,doc,nls|pet:librepup
 yes|patch|patch|exe>dev,dev,doc,nls
