@@ -11,23 +11,12 @@ So, I am in the process of taking them out, to separate PETs. A Woof developer w
 include these PETs in the package-list, so they will be built-in to the build of Puppy.
 
 Note, the developer would of course choose an appropriate list of firmware PETs to
-include. For example, the "hsfmodem" analog modem firmware might not have an appropriate
+include. For example, the an analog modem firmware might not have an appropriate
 kernel driver in recent kernels. Though, the Woof build script '3builddistro' can
 detect this situation and suggest to remove innapropriate firmware.
 
 These firmware PETs are named "firmware_linux_module_*" to make it unambiguous what
-they are for. The "*" part is the name of the directory inside /lib/modules/all-firmware,
-for example "firmware_linux_module_b43".
-
-Firmware removed from Woof, now PETS
-------------------------------------
-
-b43       (20120920)
-dgcmodem  "
-hsfmodem  "
-b43legacy "
-brcm      "
-wl        "
+they are for. The "*" part is the name of a directory inside /lib/modules/all-firmware.
 
 Further technical notes
 -----------------------
