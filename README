@@ -22,8 +22,7 @@ Unlike its upstream, woof-CE-libre:
 Also, Librepup differs from the upsteam release it is based on:
   - It uses different artwork and branding, to avoid confusion between the two
   - Quickpet is removed, as it recommends non-free software
-  - The non-free browser is replaced with IceCat
-    (https://www.gnu.org/software/gnuzilla/)
+  - The non-free browser is replaced with QupZilla (http://www.qupzilla.com/)
   - The default IRC client is replaced with a patched HexChat
     (https://hexchat.github.io/) which does not recommend a non-free browser
   - Sylpheed (http://sylpheed.sraoss.jp/en/) has been updated and re-packaged,
@@ -37,8 +36,11 @@ Also, Librepup differs from the upsteam release it is based on:
   - Clipit (http://sourceforge.net/projects/gtkclipit/) has been replaced with
     Parcellite (http://parcellite.sourceforge.net/), because it is newer and
     does not show popup windows
+  - Osmo (http://clayo.org/osmo/) has been updated and built without exotic
+    dependencies
   - The kernel has been updated to a newer minor version, deblobbed and rebuilt
-    with the same configuration
+    with a slightly modified configuration, for much better performance and
+    responsiveness and with additional drivers
   - The default package repository has been replaced by Librepup's repository
 
 Relationship with Upstream
