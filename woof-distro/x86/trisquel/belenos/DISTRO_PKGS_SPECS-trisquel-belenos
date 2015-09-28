@@ -94,7 +94,7 @@ no|browser-default||exe| #lupu program by 01micko
 no|bsdmainutils|bsdmainutils|exe,dev,doc,nls| #only need col utility, refer forum t=82092&start=135. 130216 col now in util-linux.
 yes|busybox||exe,dev>null,doc,nls
 yes|bzip2|bzip2,libbz2-1.0,libbz2-dev|exe,dev,doc,nls
-yes|ca_certificates|ca-certificates|exe,dev,doc,nls
+yes|ca-certificates|ca-certificates|exe,dev,doc,nls
 yes|cairo|libcairo2,libcairo2-dev,libcairo-gobject2,libcairo-gobject2,libcairo-script-interpreter2|exe,dev,doc,nls
 no|cairomm|libcairomm-1.0-1,libcairomm-1.0-dev|exe,dev,doc,nls| ###PROBLEM TODO### this pkg supposed to go entirely into upup/cairomm_DEV but not right. see also glibmm, gtkmm, pangomm ###TODO###
 yes|caps_eq||exe,dev,doc,nls| #needed by zigberts pequalizer, refer t=31206&start=1290
@@ -534,7 +534,7 @@ yes|libsndfile|libsndfile1,libsndfile1-dev,sndfile-programs|exe,dev,doc,nls
 yes|libsoup|libsoup2.4-1,libsoup2.4-dev|exe,dev,doc,nls
 yes|libstdc++||exe,dev>null,doc>null,nls>null| #old libstdc++.so.5. some video codecs (/usr/lib/codecs) need it.
 yes|libstdc++6|libstdc++6,libstdc++6-4.6-dev|exe,dev,doc,nls
-yes|libtar|libtar0,libtar-dev|exe,dev,doc,nls| #needed by osmo.
+no|libtar|libtar0,libtar-dev|exe,dev,doc,nls| #needed by osmo.
 yes|libtasn1|libtasn1-6,libtasn1-6-dev|exe,dev,doc,nls
 yes|libthai|libthai0|exe,dev,doc,nls| #have left out libthai-data and libthai-dev.
 yes|libtheora|libtheora0,libtheora-dev|exe,dev,doc,nls
@@ -669,7 +669,7 @@ yes|opus|libopus0,libopus-dev,opus-tools|exe,dev,doc,nls| #needed by ffmpeg
 yes|orbit2|liborbit2,liborbit-2-0,liborbit2-dev|exe,dev,doc,nls
 yes|orc|liborc-0.4-0,liborc-0.4-dev|exe,dev,doc,nls| #needed by mplayer.
 no|osmo|osmo|exe,dev,doc,nls| #aaargh, has changed from libgtkhtml dep to webkitgtk, huge size.
-yes|osmo||exe,dev,doc,nls|pet:precise| #needs libnotify, libgtkhtml, libtar, libgringotts, libical.
+yes|osmo||exe,dev,doc,nls|pet:librepup|
 yes|ots|libots0,libots-dev|exe,dev,doc,nls
 yes|p7zip-full|p7zip-full|exe,dev,doc,nls
 yes|p11-kit|libp11-kit0,libp11-kit-dev|exe,dev,doc,nls| #needed by cupsd (ubuntu cups pkg). 121210 need dev pkg for gnutls, refer forum t=82092&start=135
@@ -822,7 +822,7 @@ no|squashfs-tools|squashfs-tools|exe,dev>null,doc,nls
 yes|squashfs-tools||exe
 yes|squashfs-tools4||exe|  #note, kernel-version sensitive
 yes|ssh_gui||exe
-yes|ssl-certificate-fix||exe,dev,doc,nls|pet:noarch| #qtweb needs this.
+no|ssl-certificate-fix||exe,dev,doc,nls|pet:noarch| #qtweb needs this.
 yes|startup-notification|libstartup-notification0,libstartup-notification0-dev|exe,dev,doc,nls
 yes|strace|strace|exe>dev,dev,doc,nls
 yes|streamripper||exe,dev,doc,nls
