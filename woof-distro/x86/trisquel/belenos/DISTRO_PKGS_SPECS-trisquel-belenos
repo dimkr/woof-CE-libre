@@ -315,6 +315,7 @@ yes|gsettings-desktop-schemas|gsettings-desktop-schemas|exe,dev,doc,nls| #needs 
 yes|gsm|libgsm1,libgsm1-dev|exe,dev,doc,nls
 yes|gstoraster_s533||exe
 no|gstreamer1|libgstreamer1.0-0,libgstreamer-plugins-base1.0-0,libxcb-xfixes0,libwayland-server0,libwayland-client0,libgbm1,libegl1-mesa|exe,dev,doc,nls
+yes|gstreamer1|libgstreamer1.0-0,libgstreamer-plugins-base1.0-0|exe,dev,doc,nls
 no|gstreamer1-dev|gir1.2-glib-2.0,gir1.2-gstreamer-1.0,libgirepository-1.0-1,libgstreamer1.0-dev,libgstreamer-plugins-bad1.0-dev,libgstreamer-plugins-good1.0-dev|exe>dev,dev,doc,nls| # GSTREAMER1.0
 yes|gstreamer0|libgstreamer0.10-0,libgstreamer-plugins-base0.10-0,gstreamer0.10-fluendo-mp3,libgstreamer-plugins-bad0.10-0,gstreamer0.10-alsa|exe,dev,doc,nls| #qupzilla, seamonkey, etc need this
 yes|gstreamer0-dev|gir1.2-freedesktop,gir1.2-glib-2.0,gir1.2-gst-plugins-base-0.10,gir1.2-gstreamer-0.10,libgirepository-1.0-1,libgstreamer0.10-dev,libgstreamer-plugins-base0.10-dev,libgstreamer-plugins-bad0.10-dev|exe>dev,dev,doc,nls
