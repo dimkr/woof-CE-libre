@@ -37,7 +37,7 @@ no|a52dec||exe,dev,doc,nls
 yes|a52dec|liba52-0.7.4,liba52-0.7.4-dev|exe,dev,doc,nls
 yes|aalib|libaa1|exe,dev>null,doc,nls| #ascii library, needed by mplayer, gphoto
 no|abiword|abiword,abiword-common,libabiword-3.0,libabiword-3.0-dev,libwps-0.2-2|exe,dev,doc,nls| #needs gtk+3.
-yes|abiword||exe,dev,doc,nls
+yes|abiword||exe,dev,doc,nls|pet:librepup|
 no|abiword-plugin-grammar|abiword-plugin-grammar|exe,dev,doc,nls
 no|abiword-plugin-mathview|abiword-plugin-mathview|exe,dev,doc,nls
 no|absvolume_puppy||exe
@@ -224,6 +224,8 @@ no|firmware_linux_module_wl||exe
 yes|flac|flac,libflac8,libflac-dev|exe,dev,doc,nls
 yes|flex|flex|exe>dev,dev,doc,nls
 yes|flsynclient||exe
+yes|fonts-droid|fonts-droid|exe,dev,doc,nls
+yes|fonts-liberation|fonts-liberation|exe,dev,doc,nls
 no|fontwizard||exe,dev,doc,nls| #created by 01micko.
 yes|foomatic-db-engine|foomatic-db-engine|exe,dev,doc,nls
 no|foomatic-db|foomatic-db|exe,dev,doc,nls
@@ -657,6 +659,7 @@ yes|ntpdate||exe| #used by psync to sync local time and date from the internet.
 yes|numlockx||exe| #needed by shinobars firstrun.
 no|obconf||exe,dev>null,doc,nls|+openbox
 no|openbox||exe,dev>null,doc,nls
+yes|open-ath9k-htc-firmware|open-ath9k-htc-firmware|exe,dev,doc,nls
 yes|opencv|libopencv-core2.4,libopencv-imgproc2.4|exe,dev>null,doc,nls| #ffmpeg needs this. dep: libtbb2. have left off the dev deb.
 yes|openldap|libldap-2.4-2,libldap2-dev|exe,dev,doc,nls
 yes|openslp|libslp1,libslp-dev|exe,dev,doc,nls
