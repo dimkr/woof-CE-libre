@@ -48,7 +48,7 @@ Relationship with Upstream
 
 The "libre" branch of woof-CE-libre follows the "testing" branch of upstream.
 
-Most features added by woof-CE-libre have been upstreamed, to ease maintenance:
+All features added by woof-CE-libre have been upstreamed, to ease maintenance:
   - Configuration and data files required to reproduce the latest upstream
     version of Puppy Linux (http://www.puppylinux.org/)
   - Support for Trisquel (http://www.trisquel.info/) packages and repositories
@@ -57,6 +57,7 @@ Most features added by woof-CE-libre have been upstreamed, to ease maintenance:
   - Support for deblobbed kernels, using the Linux-libre
     (http://www.fsfla.org/ikiwiki/selibre/linux-libre/) scripts
   - Minor fixes and efficiency improvements
+  - New and improved package templates
 
 Librepup-specific additions (such as its configuration files) will not be
 upstreamed, to reduce the risk of misleading users who associate the 'Librepup'
