@@ -36,7 +36,7 @@ LANGORG="$(locale | grep '^LANG=' | cut -d '=' -f 2)" #121116
 export LANG=C #faster.
 
 if [ "$SETUPCALLEDFROM" = "ppm" ];then
- DBmethod="`cat /var/local/petget/db_verbose`"
+ DBmethod="$(cat /var/local/petget/db_verbose 2>/dev/null)"
  [ "$DBmethod" = "" ] && DBmethod=true
  if [ "$DBmethod" = "false" ]; then
   yaf-splash -icon gtk-info -bg white -placement top -close never -text "Updating package databases.
@@ -68,7 +68,7 @@ fi
  RUNNINGPUP='no'
 # 140109 64 bit support #140116 improve
 . ./WOOFMERGEVARS
-if [ "$WOOF_TARGETARCH" = "x86_64" ];then
+if [ "${COMPATDISTRO}" = "slackware" -a "${TARGETARCH}" = "x86_64" ];then
 # see if it's been done
 LIB64DONE=`find packages-templates -type d -name 'lib64'`
  if [ "$LIB64DONE" ];then
