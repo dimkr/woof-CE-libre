@@ -1,0 +1,4 @@
+#!/bin/bash
+#this script is started from $HOME/.jwmrc
+
+echo
