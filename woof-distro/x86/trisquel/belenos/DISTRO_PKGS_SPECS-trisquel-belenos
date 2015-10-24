@@ -525,6 +525,7 @@ yes|libpng14||exe,dev>null,doc,nls|pet:librepup_x86
 yes|libpthread-stubs|libpthread-stubs0-dev|exe>dev,dev,doc,nls
 no|libpython|libpython2.7,libpython2.7-stdlib|exe>dev,dev,doc,nls| #needed by gdb in devx. move these into python.
 yes|libraw1394|libraw1394-11,libraw1394-dev|exe,dev,doc,nls
+yes|librepup_wallpapers||exe
 yes|librsvg|librsvg2-2,librsvg2-dev,librsvg2-bin,librsvg2-common|exe,dev,doc,nls| #shows gtk3 as dep, but might work without.
 yes|libsamplerate|libsamplerate0,libsamplerate0-dev|exe,dev,doc,nls
 yes|libselinux|libselinux1|exe,dev>null,doc,nls
