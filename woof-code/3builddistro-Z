@@ -225,7 +225,7 @@ COMPCHOICE='-comp xz -Xbcj x86 -b 512K'
 
 #110823
 echo
-./findwoofinstalledpkgs #creates woof-installed-packages, which later gets copied into sandbox3/rootfs-complete/root/.packages/
+#./findwoofinstalledpkgs #creates woof-installed-packages, which later gets copied into sandbox3/rootfs-complete/root/.packages/
 #121028 ...now also creates devx-only-installed-packages.
 
 #100912 choose simple or traditional filenames...
@@ -303,13 +303,32 @@ cat sandbox3/rootfs-complete/pinstall.sh >> sandbox3/pinstall.sh
 # extra packages
 for d in $(ls rootfs-packages)
 do  
-       LIST="sfs_load|pfilesearch|pfind"
+       state=true
+       LIST="sfs_load|pfilesearch|pfind|firewall_ng"
        echo "$d" | egrep -q "$LIST" && def=true || def=false 
+       case "$d" in
+		jwm_config|ptheme)
+			if grep 'jwmconfig' DISTRO_PKGS_SPECS-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION} |\
+			grep -q '^yes' ;then
+				state=false #cant choose them if jwmconfig is in specs.
+			else
+				def=true
+			fi
+			;;
+		*)
+			if grep "$d" DISTRO_PKGS_SPECS-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION} |\
+			grep -q '^yes' ;then
+				state=false # don't overwrite user chosen specs
+				def=false
+			fi
+			;;	
+	   esac
        CBOXES="$CBOXES""<hbox space-expand=\"true\" space-fill=\"true\">
 		<checkbox>
 			<label>$d</label>
 			<default>$def</default>
 			<variable>$d</variable>
+			<sensitive>$state</sensitive>
 		</checkbox>
 	</hbox>"
 done
@@ -318,7 +337,7 @@ export GUIC="<window title=\"Choose extra packages\">
 	<vbox>
 		<hbox>
 			<text>
-				<label>Here you can choose what extra packages to install. It is recommended that you leave the checked boxes checked as these are usually dependencies of installed programs in puppy.</label>
+				<label>Here you can choose what extra packages to install. It is recommended that you leave the checked boxes checked as these are usually dependencies of installed programs in puppy. If the checkbox for a program is disabled then it means that a coressponding program is in DISTRO_PKGS_SPECS-${DISTRO_BINARY_COMPAT}-${DISTRO_COMPAT_VERSION}</label>
 			</text>
 		</hbox>
 		<hbox space-expand=\"true\" space-fill=\"true\">	
@@ -326,14 +345,15 @@ export GUIC="<window title=\"Choose extra packages\">
 				<label>\"<b>These are maintained as part of woof.</b>\"</label>
 			</text>
 		</hbox>
-		<frame>
+		<vbox scrollable=\"true\" height=\"160\" width=\"380\">
 			$CBOXES
-		</frame>
+		</vbox>
 		<hbox><button ok></button></hbox>
 	</vbox>
 </window>"
 gtkdialog -p GUIC -c > $CHOICE
 . $CHOICE
+[ -f /tmp/rootfs-packages.specs ] && rm /tmp/rootfs-packages.specs # in case we baled out on last build
 if [ "$EXIT" = "OK" ];then
 	while read line
 	do 
@@ -341,12 +361,14 @@ if [ "$EXIT" = "OK" ];then
 			echo "copying ${line%%=*}"
 			cp -a rootfs-packages/${line%%=*}/* sandbox3/rootfs-complete/
 			cat sandbox3/rootfs-complete/pinstall.sh >> sandbox3/pinstall.sh
+			cat sandbox3/rootfs-complete/pet.specs >> /tmp/rootfs-packages.specs
 		else
 			continue
 		fi
 	done < $CHOICE
 fi
 rm $CHOICE
+./findwoofinstalledpkgs # moved to here so we can add /tmp/rootfs-packages.specs
 
 echo "Continuing... please wait"
 
@@ -1829,6 +1851,38 @@ do
  done
 done
 
+# do the same for rootfs-packages
+if [ -f /tmp/rootfs-packages.specs ];then
+	while read line ; do
+		PKGL=`echo $line | cut -d '|'  -f 2`
+		echo -n "${PKGL} "
+		ogPATTERN="s%^\\.\\./rootfs-packages/${PKGL}/%/%"
+		find ../rootfs-packages/$PKGL | sed -e "$ogPATTERN" | sort > /tmp/0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/${PKGL}.files
+		sync
+		mkdir -p 0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/root/.packages/builtin_files
+		PREVPATH=''; PREVPATH0=''
+		cat /tmp/0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/${PKGL}.files |
+		while read ONELINE
+			 do
+				[ "`echo "$ONELINE" | cut -c 1`" == "." ] && continue #catch ex: ../packages-qrky/abiword
+				if [ -d "rootfs-complete${ONELINE}" ];then
+					PREVPATH="$ONELINE"
+					echo "$ONELINE" >> 0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/root/.packages/builtin_files/${PKGL}
+				else
+					NEWPATH="`dirname "$ONELINE"`"
+					[ "$NEWPATH" == "/" ] && continue #ignore top-level files.
+					NEWFILE="`basename "$ONELINE"`"
+					if [ -e "rootfs-complete${ONELINE}" ];then #sanity check.
+						if [ "$PREVPATH" == "$NEWPATH" -o "$PREVPATH0" == "$NEWPATH" ];then #sanity check. 121010
+							echo " ${NEWFILE}" >> 0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/root/.packages/builtin_files/${PKGL}
+						fi
+					fi
+				fi
+		done
+	done < /tmp/rootfs-packages.specs
+	rm -f /tmp/rootfs-packages.specs
+fi
+echo
 echo "0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}|0builtin_files_${DISTRO_FILE_PREFIX}|${DISTRO_VERSION}||BuildingBlock|||0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}.pet||Lists of files built-in to the SFS file||||
 " > 0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}/pet.specs
 rm -f 0builtin_files_${DISTRO_FILE_PREFIX}-${DISTRO_VERSION}.pet 2>/dev/null
@@ -3151,6 +3205,24 @@ rm -f sandbox3/devx/etc/profile.d/*.csh
 # cp -a -f --remove-destination sandbox3/devx/usr/bin/multiarch-i386-linux/* sandbox3/devx/usr/bin/
 # rm -rf sandbox3/devx/usr/bin/multiarch-i386-linux
 #fi
+
+# 151019 - delete duplicate symlinks
+echo "deleting duplicate symlinks"
+find sandbox3/devx -type l |
+while read ONESYMLINK
+do
+  # if the symlink exists in sandbox3/rootfs-complete we delete it
+ ESYMLINK=$(echo "$ONESYMLINK" | sed 's%devx%rootfs-complete%')
+ [ -h "$ESYMLINK" ] && echo -n "deleted $ONESYMLINK " && rm -f "$ONESYMLINK"
+ 
+done
+
+sync
+
+
+# 151019 - delete whiteouts
+echo "cleaning out whiteouts"
+find sandbox3/devx -name '.wh*' -delete
 
 echo "Now creating ${DEVXSFS} ..."
 ${MKSQUASHFS} sandbox3/devx ./${WOOF_OUTPUT}/${DEVXSFS} ${COMPCHOICE} #100911 110713
