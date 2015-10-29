@@ -1,5 +1,5 @@
 Pup-Kview-1.3.2|Pup-Kview|1.3.2||System|33K||Pup-Kview-1.3.2.pet||Kernel module viewer||||
-Pup-SysInfo-2.6|Pup-SysInfo|2.6||System|156K||Pup-SysInfo-2.6.pet||System information utility||||
+Pup-SysInfo-2.6.1|Pup-SysInfo|2.6.1||System|155K||Pup-SysInfo-2.6.1.pet||System information utility||||
 PupApps-2.2|PupApps|2.2||Utility|222K||PupApps-2.2.pet||Launch favorite applications||||
 PupClockset-2.3.1|PupClockset|2.3.1||Desktop|119K||PupClockset-2.3.1.pet||PupClockset manager||||
 PupControl-2.6|PupControl|2.6||Utility|313K||PupControl-2.6.pet||Control panel||||
@@ -51,7 +51,7 @@ desk_icon_theme_stark042-1|desk_icon_theme_stark042|1||Desktop|492K||desk_icon_t
 desk_icon_theme_tulliana-2.0|desk_icon_theme_tulliana|2.0||Desktop|122K||desk_icon_theme_tulliana-2.0.pet||desktop icon theme||||
 desk_icon_theme_yasis-0.2|desk_icon_theme_yasis|0.2||BuildingBlock|200K||desk_icon_theme_yasis-0.2.pet||desktop icon theme||||
 desksetup-0.8|desksetup|0.8||Desktop|64K||desksetup-0.8.pet|+gtkdialog|Desksetup Templates for Desk Icons||||
-f2fs-usb-installer-0.5-noarch|f2fs-usb-installer|0.5-noarch||Setup|276K||f2fs-usb-installer-0.5-noarch.pet||F2FS Installer - Flash Drives||||
+f2fs-usb-installer-0.22-noarch|f2fs-usb-installer|0.22-noarch||Setup|280K||f2fs-usb-installer-0.22-noarch.pet||F2FS Installer - Flash Drives||||
 ffconvert-1.4.2|ffconvert|1.4.2||Multimedia|392K||ffconvert-1.4.2.pet|+ffmpeg|FFConvert multimedia converter||||
 ffconvert_NLS-1.2.1|ffconvert_NLS|1.2.1||Multimedia|304K||ffconvert_NLS-1.2.1.pet|+ffconvert|FFConvert multimedia converter||||
 firmware_linux_module_agrmodem-20130527|firmware_linux_module_agrmodem|20130527||BuildingBlock|26K||firmware_linux_module_agrmodem-20130527.pet||kernel-independent modem driver components, created by rerwin||||
@@ -95,9 +95,8 @@ gtkthememaker-1.4|gtkthememaker|1.4||Desktop|68K||gtkthememaker-1.4.pet||GTK The
 hunspell-en-us-2|hunspell-en-us|2||BuildingBlock|732K||hunspell-en-us-2.pet|+hunspell,+enchant|US English dictionary|||official|
 iconfinder-1.4|iconfinder|1.4||Graphic;viewer|60K||iconfinder-1.4.pet||Find icons in your system||||
 iconfinder_NLS-1.4|iconfinder_NLS|1.4||Graphic;viewer|4K||iconfinder_NLS-1.4.pet||Find icons in your system||||
-jwmconfig2-20130129|jwmconfig2|20130129||Desktop|256K||jwmconfig2-20130129.pet|+jwm2,+gtkdialog|JWM configuration. note, designed to work with jwm 500+||||
 jwmconfig2-130504-5|jwmconfig2|130504-5||Desktop;appearance|352K||jwmconfig2-130504-5.pet|+jwm&ge750|JWM Window Manager Settings||||
-jwmconfig3-140429|jwmconfig3|140429||Desktop|208K||jwmconfig3-140429.pet|+jwm|JWM Window Manager Settings||||
+jwmconfig3-151025|jwmconfig3|151025||Desktop|272K||jwmconfig3-151025.pet||JWM Window Manager Settings||||
 jwm-theme-black_vg-0.8|jwm-theme-black_vg|0.8||BuildingBlock|32K||jwm-theme-black_vg-0.8.pet|+jwm|black jwm theme||||
 jwm-theme-cloudy-0.2|jwm-theme-cloudy|0.2||BuildingBlock|32K||jwm-theme-cloudy-0.2.pet|+jwm|greyish jwm theme||||
 jwm-theme-dark_gradient-0.9|jwm-theme-dark_gradient|0.9||BuildingBlock|32K||jwm-theme-dark_gradient-0.9.pet|+jwm|dark gradient jwm theme||||
@@ -208,7 +207,7 @@ radeon_firmware-120829|radeon_firmware|120829||System|308K||radeon_firmware-1208
 radeon_firmware_new-140109|radeon_firmware_new|140109||BuildingBlock|2836K||radeon_firmware_new-140109.pet||radeon firmware||||
 screeny-0.7-noarch|screeny|0.7-noarch||Graphic|32K||screeny-0.7-noarch.pet||Screeny Capture Windows and Fullscreen||||
 sfs-converter-1.3.2-1|sfs-converter|1.3.2-1||Setup|44K||sfs-converter-1.3.2-1.pet|+gtkdialog,+squashfs-tools,+squashfs-tools4|Utility to convert sfs 3 to 4, vice versa||||
-sfs_load-2.3.2|sfs_load|2.3.2||Setup|208K||sfs_load-2.3.2.pet||Load Squash files||||
+sfs_load-2.3.6|sfs_load|2.3.6||Setup|208K||sfs_load-2.3.6.pet||Load Squash files||||
 shared-mime-info-0.70-6|shared-mime-info|0.70-6||BuildingBlock|272K||shared-mime-info-0.70-6.pet||mime information||||
 shared-mime-info_DEV-0.70-6|shared-mime-info_DEV|0.70-6||BuildingBlock|3772K||shared-mime-info_DEV-0.70-6.pet|+shared-mime-info|mime information||||
 shareinternet-2.2.4-1|shareinternet|2.2.4-1||Network|136K||shareinternet-2.2.4-1.pet|+gtkdialog,+dnsmasq|run puppy as a router||||
@@ -226,7 +225,7 @@ urxvtset-0.5.1|urxvtset|0.5.1||Desktop;appearance|28K||urxvtset-0.5.1.pet|+yad,+
 usb-modeswitch-data-20120815|usb-modeswitch-data|20120815||BuildingBlock|297K||usb-modeswitch-data-20120815.pet||mode switcher data base||||
 vlc-gtk-2.7-noarch|vlc-gtk|2.7-noarch||Multimedia|212K||vlc-gtk-2.7-noarch.pet|+gtkdialog,+rtmpdump,+vlc_nogui,+xdotools|VLC-gtk - simple VLC frontend||||
 wag_profiles-20121117|wag_profiles|20121117||BuildingBlock|96K||wag_profiles-20121117.pet||wifi access gadget profile manager||||
-wallpaper-0.6.4|wallpaper|0.6.4||Desktop|116K||wallpaper-0.6.4.pet|+gtkdialog&ge0.7.21|Set backdrop image||||
+wallpaper-0.6.5|wallpaper|0.6.5||Desktop|116K||wallpaper-0.6.5.pet||Set backdrop image||||
 wcpufreq-0.8.1|wcpufreq|0.8.1||System|53K||wcpufreq-0.8.1.pet||CPU Frequency Scaling Tool||||
 woo-ff-0.1.1|woo-ff|0.1.1||Multimedia|48K||woo-ff-0.1.1.pet|+ffmpeg,+gtkdialog|woo-ff - multimedia converter||||
 xkbconfigmanager-1.2|xkbconfigmanager|1.2||Desktop|144K||xkbconfigmanager-1.2.pet|+xorg|xorg keyboard manager, originally created by dougal||||
