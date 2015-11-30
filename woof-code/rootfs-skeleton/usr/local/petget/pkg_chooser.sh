@@ -259,7 +259,13 @@ if [ ! -f /tmp/petget_installed_patterns_system ];then
  INSTALLED_PATTERNS_SYS="`cat /root/.packages/layers-installed-packages | cut -f 2 -d '|' | sed -e 's%^%|%' -e 's%$%|%' -e 's%\\-%\\\\-%g'`"
  echo "$INSTALLED_PATTERNS_SYS" > /tmp/petget_installed_patterns_system
  #PKGS_SPECS_TABLE also has system-installed names, some of them are generic combinations of pkgs...
- INSTALLED_PATTERNS_GEN="`echo "$PKGS_SPECS_TABLE" | grep '^yes' | cut -f 2 -d '|' |  sed -e 's%^%|%' -e 's%$%|%' -e 's%\\-%\\\\-%g'`"
+ . /etc/rc.d/BOOTCONFIG
+ if [ "$(echo $EXTRASFSLIST | grep $DISTRO_ZDRVSFS)" = "" -a \
+   "$(echo $LASTUNIONRECORD | grep $DISTRO_ZDRVSFS)" = "" ]; then
+  INSTALLED_PATTERNS_GEN="`echo "$PKGS_SPECS_TABLE" | grep '^yes' | grep -v 'exe>dev' | cut -f 2 -d '|' |  sed -e 's%^%|%' -e 's%$%|%' -e 's%\\-%\\\\-%g'`"
+ else
+  INSTALLED_PATTERNS_GEN="`echo "$PKGS_SPECS_TABLE" | grep '^yes' | cut -f 2 -d '|' |  sed -e 's%^%|%' -e 's%$%|%' -e 's%\\-%\\\\-%g'`"
+ fi
  echo "$INSTALLED_PATTERNS_GEN" >> /tmp/petget_installed_patterns_system
  
  #120822 in precise puppy have a pet 'cups' instead of the ubuntu debs. the latter are various pkgs, including 'libcups2'.
@@ -390,7 +396,7 @@ echo $1 > /tmp/petget/current-repo-triad
 chmod 777 /tmp/filterversion.sh
 
 #run the traditional ui if set in config
-if [ "$(</var/local/petget/ui_choice 2>/dev/null)" = "Classic" ]; then
+if [ "$(cat /var/local/petget/ui_choice 2>/dev/null)" = "Classic" ]; then
 	. /usr/local/petget/ui_Classic
 	exit 0
 fi
@@ -623,7 +629,7 @@ S='<window title="'$(gettext 'Puppy Package Manager v')''${VERSION}'" width-requ
               <item stock="gtk-Internet">'$(gettext 'Internet')'|Internet</item>
               <item stock="gtk-Multimedia">'$(gettext 'Multimedia')'|Multimedia</item>
               <item stock="gtk-Fun">'$(gettext 'Fun')'|Fun</item>'
-              [ "$(</var/local/petget/bb_category 2>/dev/null)" = "true" ] && S=$S'<item stock="gtk-BB">'$(gettext 'BuildingBlock')'|BuildingBlock</item>'
+              [ "$(cat /var/local/petget/bb_category 2>/dev/null)" = "true" ] && S=$S'<item stock="gtk-BB">'$(gettext 'BuildingBlock')'|BuildingBlock</item>'
               S=$S'<width>140</width><height>112</height>
               <action signal="changed">/usr/local/petget/filterpkgs.sh $CATEGORY</action>
               <action signal="changed">refresh:TREE1</action>
@@ -659,7 +665,7 @@ S='<window title="'$(gettext 'Puppy Package Manager v')''${VERSION}'" width-requ
   </vbox>
   <hbox space-expand="false" space-fill="false">
     <progressbar height-request="25" space-expand="true" space-fill="true">
-      <input>while [ -s /tmp/petget/install_status -a "$(ps|grep PPM_GUI|grep gtkdialog|wc -l)" -gt 2 ]; do cat /tmp/petget/install_status_percent; cat /tmp/petget/install_status; sleep 0.5; done</input>
+      <input>while [ -s /tmp/petget/install_status -a "$(ps aux|grep PPM_GUI|grep gtkdialog|wc -l)" -gt 2 ]; do cat /tmp/petget/install_status_percent; cat /tmp/petget/install_status; sleep 0.5; done</input>
       <action>enable:VBOX_MAIN</action>
       <action>disable:BUTTON_INSTALL</action>
       <action>rm /tmp/pkgs_to_install</action>
